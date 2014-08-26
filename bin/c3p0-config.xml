@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+    <!-- DB1,support a SQL-SERVER DB type entity-->
+    <named-config name="DataBase1">  
+        <property name="jdbcUrl">jdbc:jtds:sqlserver://</property>  
+        <property name="driverClass">net.sourceforge.jtds.jdbc.Driver</property>  
+        <property name="user"></property>  
+        <property name="password"></property>  
+		<property name="minPoolSize">1</property>
+		<property name="maxPoolSize">10</property>
+		<property name="maxIdleTime">60</property>
+		<property name="acquireIncrement">5</property>
+		<property name="initialPoolSize">1</property>
+		<property name="idleConnectionTestPeriod">60</property>
+    </named-config>
+    <!-- DB2,support a VERTICA DWH type entity-->
+    <named-config name="DataBase2">  
+        <property name="jdbcUrl">jdbc:vertica://vertstg:5433/</property>  
+        <property name="driverClass">com.vertica.jdbc.Driver</property>  
+        <property name="user">TSWriter</property>  
+        <property name="password">write1DB$TS</property>  
+		<property name="minPoolSize">1</property>
+		<property name="maxPoolSize">10</property>
+		<property name="maxIdleTime">60</property>
+		<property name="acquireIncrement">5</property>
+		<property name="initialPoolSize">1</property>
+		<property name="idleConnectionTestPeriod">60</property>
+    </named-config>
+    <!-- DB3,support a NETEZZA DWH type entity-->
+    <named-config name="DataBase3">  
+        <property name="jdbcUrl">jdbc:netezza://</property>  
+        <property name="driverClass">org.netezza.Driver</property>  
+        <property name="user"></property>  
+        <property name="password"></property>  
+		<property name="minPoolSize">1</property>
+		<property name="maxPoolSize">10</property>
+		<property name="maxIdleTime">60</property>
+		<property name="acquireIncrement">5</property>
+		<property name="initialPoolSize">1</property>
+		<property name="idleConnectionTestPeriod">60</property>
+    </named-config> 
+</c3p0-config>

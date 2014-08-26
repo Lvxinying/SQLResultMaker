@@ -1,0 +1,177 @@
+[INFO] - 26/08/2014 03:33:12 - Util - Got 1 SQL files in SQL path!Time costing: 177891 ns
+[INFO] - 26/08/2014 03:33:12 - ResultFileMaker - Begin to execute SQL in SQL file name=ML_STOCK_FILE_GENERATE_LIMIT20000.sql
+[INFO] - 26/08/2014 03:33:12 - Util - Start to read SQLs in each source SQL files... ...
+[INFO] - 26/08/2014 03:33:12 - Util - Reading SQL File name=ML_STOCK_FILE_GENERATE_LIMIT20000.sql
+[INFO] - 26/08/2014 03:33:12 - Util - Finding SQL: Select A.PerformanceId,A.YieldDate,A.Yield,A.BetaDate,A.Beta,A.ProxyId,PD.CUSIP, PD.ISIN, PD.Sedol, PD.ExchangeId, PD.Symbol, CD.CountryId,ID.InvestmentName,PS.ExchangeIdfrom(select case when BetaTable.PerformanceId is null then YieldTable.PerformanceId else BetaTable.PerformanceId end as PerformanceId,YieldTable.EndDate as YieldDate,Average3MonthYield as Yield,BetaTable.EndDate  as BetaDate,Beta,BetaTable.ProxyId from (select * from dbo.ML3YearBetaForMonthEndForStock where MLUniverseType=2) as BetaTablefull outer join (select * from dbo.MLAverage3MonthYieldForMonthEndForStock where MLUniverseType=2) as YieldTableon BetaTable.PerformanceId = YieldTable.PerformanceId) AINNER JOIN  dbo.PerformanceIdDimension PD ON A.PerformanceId = PD.PerformanceIdLEFT OUTER JOIN  dbo.CompanyIdDimension CD ON PD.CompanyId = CD.CompanyIdLEFT OUTER JOIN  dbo.InvestmentIdDimension ID ON A.ProxyId = ID.InvestmentIdLEFT OUTER JOIN  dbi.PerformanceSearch PS ON PD.InvestmentId =  PS.InvestmentId AND PS.Status = 1 AND PS.IsPrimary = 1 LIMIT 20000
+[INFO] - 26/08/2014 03:33:12 - Util - Begin to connect to NO.2 DataBase... ...
+[INFO] - 26/08/2014 03:33:13 - DBPool - DataBase2 initialize finished, total cost [857]ms
+[INFO] - 26/08/2014 03:33:16 - Util - Success to connect to NO.2 DataBase!
+[ERROR] - 26/08/2014 03:33:17 - Util - [Vertica][VJDBC](4856) ERROR: Syntax error at or near "select"
+[INFO] - 26/08/2014 03:33:18 - Util - DB connection has closed!
+[WARN] - 26/08/2014 03:33:18 - ResultFileMaker - The SQL FILE name=[ML_STOCK_FILE_GENERATE_LIMIT20000.sql] executed no return data records!
+[INFO] - 26/08/2014 03:37:28 - Util - Got 1 SQL files in SQL path!Time costing: 163274 ns
+[INFO] - 26/08/2014 03:37:28 - ResultFileMaker - Begin to execute SQL in SQL file name=ML_STOCK_FILE_GENERATE_LIMIT20000.sql
+[INFO] - 26/08/2014 03:37:28 - Util - Start to read SQLs in each source SQL files... ...
+[INFO] - 26/08/2014 03:37:28 - Util - Reading SQL File name=[ML_STOCK_FILE_GENERATE_LIMIT20000.sql]
+[INFO] - 26/08/2014 03:37:28 - Util - Finding SQL: SELECT A.PerformanceId,A.YieldDate,A.Yield,A.BetaDate,A.Beta,A.ProxyId,PD.CUSIP, PD.ISIN, PD.Sedol, PD.ExchangeId, PD.Symbol, CD.CountryId,ID.InvestmentName,PS.ExchangeIdFROM(SELECT case when BetaTable.PerformanceId IS null THEN YieldTable.PerformanceId else BetaTable.PerformanceId END AS PerformanceId,YieldTable.EndDate AS YieldDate,Average3MonthYield AS Yield,BetaTable.EndDate  AS BetaDate,Beta,BetaTable.ProxyId FROM (SELECT * FROM dbo.ML3YearBetaForMonthEndForStock WHERE MLUniverseType=2) AS BetaTableFULL OUTER JOIN (SELECT * FROM dbo.MLAverage3MonthYieldForMonthEndForStock WHERE MLUniverseType=2) AS YieldTableON BetaTable.PerformanceId = YieldTable.PerformanceId) AINNER JOIN  dbo.PerformanceIdDimension PD ON A.PerformanceId = PD.PerformanceIdLEFT OUTER JOIN  dbo.CompanyIdDimension CD ON PD.CompanyId = CD.CompanyIdLEFT OUTER JOIN  dbo.InvestmentIdDimension ID ON A.ProxyId = ID.InvestmentIdLEFT OUTER JOIN  dbi.PerformanceSearch PS ON PD.InvestmentId =  PS.InvestmentId AND PS.Status = 1 AND PS.IsPrimary = 1 LIMIT 20000
+[INFO] - 26/08/2014 03:37:28 - Util - Begin to connect to NO.2 DataBase... ...
+[INFO] - 26/08/2014 03:37:29 - DBPool - DataBase2 initialize finished, total cost [258]ms
+[INFO] - 26/08/2014 03:37:31 - Util - Success to connect to NO.2 DataBase!
+[ERROR] - 26/08/2014 03:37:33 - Util - [Vertica][VJDBC](4856) ERROR: Syntax error at or near "SELECT"
+[INFO] - 26/08/2014 03:37:33 - Util - DB connection has closed!
+[WARN] - 26/08/2014 03:37:33 - ResultFileMaker - The SQL FILE name=[ML_STOCK_FILE_GENERATE_LIMIT20000.sql] executed no return data records!
+[INFO] - 26/08/2014 03:39:31 - Util - Got 1 SQL files in SQL path!Time costing: 222053 ns
+[INFO] - 26/08/2014 03:39:31 - ResultFileMaker - Begin to execute SQL in SQL file name=ML_STOCK_FILE_GENERATE_LIMIT20000.sql
+[INFO] - 26/08/2014 03:39:31 - Util - Start to read SQLs in each source SQL files... ...
+[INFO] - 26/08/2014 03:39:31 - Util - Reading SQL File name=[ML_STOCK_FILE_GENERATE_LIMIT20000.sql]
+[INFO] - 26/08/2014 03:39:31 - Util - Finding SQL: SELECT A.PerformanceId,A.YieldDate,A.Yield,A.BetaDate,A.Beta,A.ProxyId,PD.CUSIP, PD.ISIN, PD.Sedol, PD.ExchangeId, PD.Symbol, CD.CountryId,ID.InvestmentName,PS.ExchangeIdFROM(SELECT case when BetaTable.PerformanceId IS null THEN YieldTable.PerformanceId else BetaTable.PerformanceId END AS PerformanceId,YieldTable.EndDate AS YieldDate,Average3MonthYield AS Yield,BetaTable.EndDate  AS BetaDate,Beta,BetaTable.ProxyId FROM (SELECT * FROM dbo.ML3YearBetaForMonthEndForStock WHERE MLUniverseType=2) AS BetaTableFULL OUTER JOIN (SELECT * FROM dbo.MLAverage3MonthYieldForMonthEndForStock WHERE MLUniverseType=2) AS YieldTableON BetaTable.PerformanceId = YieldTable.PerformanceId) A INNER JOIN  dbo.PerformanceIdDimension PD ON A.PerformanceId = PD.PerformanceIdLEFT OUTER JOIN  dbo.CompanyIdDimension CD ON PD.CompanyId = CD.CompanyIdLEFT OUTER JOIN  dbo.InvestmentIdDimension ID ON A.ProxyId = ID.InvestmentIdLEFT OUTER JOIN  dbi.PerformanceSearch PS ON PD.InvestmentId =  PS.InvestmentId AND PS.Status = 1 AND PS.IsPrimary = 1 LIMIT 20000
+[INFO] - 26/08/2014 03:39:31 - Util - Begin to connect to NO.2 DataBase... ...
+[INFO] - 26/08/2014 03:39:31 - DBPool - DataBase2 initialize finished, total cost [248]ms
+[INFO] - 26/08/2014 03:39:34 - Util - Success to connect to NO.2 DataBase!
+[ERROR] - 26/08/2014 03:39:35 - Util - [Vertica][VJDBC](4856) ERROR: Syntax error at or near "SELECT"
+[INFO] - 26/08/2014 03:39:36 - Util - DB connection has closed!
+[WARN] - 26/08/2014 03:39:36 - ResultFileMaker - The SQL FILE name=[ML_STOCK_FILE_GENERATE_LIMIT20000.sql] executed no return data records!
+[INFO] - 26/08/2014 03:40:58 - Util - Got 1 SQL files in SQL path!Time costing: 271813 ns
+[INFO] - 26/08/2014 03:40:58 - ResultFileMaker - Begin to execute SQL in SQL file name=ML_STOCK_FILE_GENERATE_LIMIT20000.sql
+[INFO] - 26/08/2014 03:40:58 - Util - Start to read SQLs in each source SQL files... ...
+[INFO] - 26/08/2014 03:40:58 - Util - Reading SQL File name=[ML_STOCK_FILE_GENERATE_LIMIT20000.sql]
+[INFO] - 26/08/2014 03:40:58 - Util - Finding SQL: SELECTA.PerformanceId,A.YieldDate,A.Yield,A.BetaDate,A.Beta,A.ProxyId,PD.CUSIP,PD.ISIN,PD.Sedol,PD.ExchangeId,PD.Symbol,CD.CountryId,ID.InvestmentName,PS.ExchangeIdFROM(   SELECT   case when BetaTable.PerformanceId IS NULL THEN YieldTable.PerformanceId else BetaTable.PerformanceId END AS PerformanceId,   YieldTable.EndDate AS YieldDate,   Average3MonthYield AS Yield,   BetaTable.EndDate AS BetaDate,   Beta,   BetaTable.ProxyId   FROM   (      SELECT      *      FROM dbo.ML3YearBetaForMonthEndForStock      WHERE MLUniverseType=2   )   AS BetaTableFULL OUTER   JOIN   (      SELECT      *      FROM dbo.MLAverage3MonthYieldForMonthEndForStock      WHERE MLUniverseType=2   )   AS YieldTableON BetaTable.PerformanceId = YieldTable.PerformanceId) AINNERJOIN dbo.PerformanceIdDimension PD ON A.PerformanceId = PD.PerformanceIdLEFT OUTERJOIN dbo.CompanyIdDimension CD ON PD.CompanyId = CD.CompanyIdLEFT OUTERJOIN dbo.InvestmentIdDimension ID ON A.ProxyId = ID.InvestmentIdLEFT OUTERJOIN dbi.PerformanceSearch PS ON PD.InvestmentId = PS.InvestmentIdAND PS.Status = 1AND PS.IsPrimary = 1 LIMIT 20
+[INFO] - 26/08/2014 03:40:58 - Util - Begin to connect to NO.2 DataBase... ...
+[INFO] - 26/08/2014 03:40:58 - DBPool - DataBase2 initialize finished, total cost [246]ms
+[INFO] - 26/08/2014 03:41:01 - Util - Success to connect to NO.2 DataBase!
+[ERROR] - 26/08/2014 03:41:03 - Util - [Vertica][VJDBC](4856) ERROR: Syntax error at or near "SELECTA"
+[INFO] - 26/08/2014 03:41:03 - Util - DB connection has closed!
+[WARN] - 26/08/2014 03:41:03 - ResultFileMaker - The SQL FILE name=[ML_STOCK_FILE_GENERATE_LIMIT20000.sql] executed no return data records!
+[INFO] - 26/08/2014 03:41:20 - Util - Got 1 SQL files in SQL path!Time costing: 200594 ns
+[INFO] - 26/08/2014 03:41:20 - ResultFileMaker - Begin to execute SQL in SQL file name=ML_STOCK_FILE_GENERATE_LIMIT20000.sql
+[INFO] - 26/08/2014 03:41:20 - Util - Start to read SQLs in each source SQL files... ...
+[INFO] - 26/08/2014 03:41:20 - Util - Reading SQL File name=[ML_STOCK_FILE_GENERATE_LIMIT20000.sql]
+[INFO] - 26/08/2014 03:41:20 - Util - Finding SQL: SELECT A.PerformanceId,A.YieldDate,A.Yield,A.BetaDate,A.Beta,A.ProxyId,PD.CUSIP,PD.ISIN,PD.Sedol,PD.ExchangeId,PD.Symbol,CD.CountryId,ID.InvestmentName,PS.ExchangeIdFROM(   SELECT   case when BetaTable.PerformanceId IS NULL THEN YieldTable.PerformanceId else BetaTable.PerformanceId END AS PerformanceId,   YieldTable.EndDate AS YieldDate,   Average3MonthYield AS Yield,   BetaTable.EndDate AS BetaDate,   Beta,   BetaTable.ProxyId   FROM   (      SELECT      *      FROM dbo.ML3YearBetaForMonthEndForStock      WHERE MLUniverseType=2   )   AS BetaTableFULL OUTER   JOIN   (      SELECT      *      FROM dbo.MLAverage3MonthYieldForMonthEndForStock      WHERE MLUniverseType=2   )   AS YieldTableON BetaTable.PerformanceId = YieldTable.PerformanceId) AINNERJOIN dbo.PerformanceIdDimension PD ON A.PerformanceId = PD.PerformanceIdLEFT OUTERJOIN dbo.CompanyIdDimension CD ON PD.CompanyId = CD.CompanyIdLEFT OUTERJOIN dbo.InvestmentIdDimension ID ON A.ProxyId = ID.InvestmentIdLEFT OUTERJOIN dbi.PerformanceSearch PS ON PD.InvestmentId = PS.InvestmentIdAND PS.Status = 1AND PS.IsPrimary = 1 LIMIT 20
+[INFO] - 26/08/2014 03:41:20 - Util - Begin to connect to NO.2 DataBase... ...
+[INFO] - 26/08/2014 03:41:20 - DBPool - DataBase2 initialize finished, total cost [235]ms
+[INFO] - 26/08/2014 03:41:22 - Util - Success to connect to NO.2 DataBase!
+[ERROR] - 26/08/2014 03:41:24 - Util - [Vertica][VJDBC](4856) ERROR: Syntax error at or near "SELECT"
+[INFO] - 26/08/2014 03:41:25 - Util - DB connection has closed!
+[WARN] - 26/08/2014 03:41:25 - ResultFileMaker - The SQL FILE name=[ML_STOCK_FILE_GENERATE_LIMIT20000.sql] executed no return data records!
+[INFO] - 26/08/2014 03:44:10 - Util - Got 1 SQL files in SQL path!Time costing: 162341 ns
+[INFO] - 26/08/2014 03:44:10 - ResultFileMaker - Begin to execute SQL in SQL file name=ML_STOCK_FILE_GENERATE_LIMIT20000.sql
+[INFO] - 26/08/2014 03:44:10 - Util - Start to read SQLs in each source SQL files... ...
+[INFO] - 26/08/2014 03:44:10 - Util - Reading SQL File name=[ML_STOCK_FILE_GENERATE_LIMIT20000.sql]
+[INFO] - 26/08/2014 03:44:10 - Util - Finding SQL: SELECT A.PerformanceId,A.YieldDate,A.Yield,A.BetaDate,A.Beta,A.ProxyId,PD.CUSIP,PD.ISIN,PD.Sedol,PD.ExchangeId,PD.Symbol,CD.CountryId,ID.InvestmentName,PS.ExchangeIdFROM(   SELECT    case when BetaTable.PerformanceId IS NULL THEN YieldTable.PerformanceId else BetaTable.PerformanceId END AS PerformanceId,   YieldTable.EndDate AS YieldDate,   Average3MonthYield AS Yield,   BetaTable.EndDate AS BetaDate,   Beta,   BetaTable.ProxyId   FROM   (      SELECT       *      FROM dbo.ML3YearBetaForMonthEndForStock      WHERE MLUniverseType=2   )   AS BetaTableFULL OUTER    JOIN   (      SELECT       *      FROM dbo.MLAverage3MonthYieldForMonthEndForStock      WHERE MLUniverseType=2   )   AS YieldTableON BetaTable.PerformanceId = YieldTable.PerformanceId) AINNER JOIN dbo.PerformanceIdDimension PD ON A.PerformanceId = PD.PerformanceId LEFT OUTER JOIN dbo.CompanyIdDimension CD ON PD.CompanyId = CD.CompanyId LEFT OUTER JOIN dbo.InvestmentIdDimension ID ON A.ProxyId = ID.InvestmentId LEFT OUTER JOIN dbi.PerformanceSearch PS ON PD.InvestmentId = PS.InvestmentId AND PS.Status = 1 AND PS.IsPrimary = 1 LIMIT 20
+[INFO] - 26/08/2014 03:44:10 - Util - Begin to connect to NO.2 DataBase... ...
+[INFO] - 26/08/2014 03:44:11 - DBPool - DataBase2 initialize finished, total cost [232]ms
+[INFO] - 26/08/2014 03:44:13 - Util - Success to connect to NO.2 DataBase!
+[ERROR] - 26/08/2014 03:44:14 - Util - [Vertica][VJDBC](4856) ERROR: Syntax error at or near "SELECT"
+[INFO] - 26/08/2014 03:44:15 - Util - DB connection has closed!
+[WARN] - 26/08/2014 03:44:15 - ResultFileMaker - The SQL FILE name=[ML_STOCK_FILE_GENERATE_LIMIT20000.sql] executed no return data records!
+[INFO] - 26/08/2014 03:45:32 - Util - Got 1 SQL files in SQL path!Time costing: 188466 ns
+[INFO] - 26/08/2014 03:45:32 - ResultFileMaker - Begin to execute SQL in SQL file name=ML_STOCK_FILE_GENERATE_LIMIT20000.sql
+[INFO] - 26/08/2014 03:45:32 - Util - Start to read SQLs in each source SQL files... ...
+[INFO] - 26/08/2014 03:45:32 - Util - Reading SQL File name=[ML_STOCK_FILE_GENERATE_LIMIT20000.sql]
+[INFO] - 26/08/2014 03:45:32 - Util - Finding SQL: SELECT A.PerformanceId,A.YieldDate,A.Yield,A.BetaDate,A.Beta,A.ProxyId,PD.CUSIP,PD.ISIN,PD.Sedol,PD.ExchangeId,PD.Symbol,CD.CountryId,ID.InvestmentName,PS.ExchangeIdFROM(   SELECT    case when BetaTable.PerformanceId IS NULL THEN YieldTable.PerformanceId else BetaTable.PerformanceId END AS PerformanceId,   YieldTable.EndDate AS YieldDate,   Average3MonthYield AS Yield,   BetaTable.EndDate AS BetaDate,   Beta,   BetaTable.ProxyId   FROM   (      SELECT       *      FROM dbo.ML3YearBetaForMonthEndForStock       WHERE MLUniverseType=2   )   AS BetaTableFULL    OUTER JOIN   (      SELECT       *      FROM dbo.MLAverage3MonthYieldForMonthEndForStock       WHERE MLUniverseType=2   )   AS YieldTableON BetaTable.PerformanceId = YieldTable.PerformanceId) A INNER JOIN dbo.PerformanceIdDimension PD ON A.PerformanceId = PD.PerformanceId LEFT OUTER JOIN dbo.CompanyIdDimension CD ON PD.CompanyId = CD.CompanyId LEFT OUTER JOIN dbo.InvestmentIdDimension ID ON A.ProxyId = ID.InvestmentId LEFT OUTER JOIN dbi.PerformanceSearch PS ON PD.InvestmentId = PS.InvestmentId AND PS.Status = 1 AND PS.IsPrimary = 1 LIMIT 20
+[INFO] - 26/08/2014 03:45:32 - Util - Begin to connect to NO.2 DataBase... ...
+[INFO] - 26/08/2014 03:45:33 - DBPool - DataBase2 initialize finished, total cost [231]ms
+[INFO] - 26/08/2014 03:45:35 - Util - Success to connect to NO.2 DataBase!
+[ERROR] - 26/08/2014 03:45:37 - Util - [Vertica][VJDBC](4856) ERROR: Syntax error at or near "SELECT"
+[INFO] - 26/08/2014 03:45:37 - Util - DB connection has closed!
+[WARN] - 26/08/2014 03:45:37 - ResultFileMaker - The SQL FILE name=[ML_STOCK_FILE_GENERATE_LIMIT20000.sql] executed no return data records!
+[INFO] - 26/08/2014 03:47:14 - Util - Got 1 SQL files in SQL path!Time costing: 251909 ns
+[INFO] - 26/08/2014 03:47:14 - ResultFileMaker - Begin to execute SQL in SQL file name=ML_STOCK_QA_CountryId_LIMIT20000.sql
+[INFO] - 26/08/2014 03:47:14 - Util - Start to read SQLs in each source SQL files... ...
+[INFO] - 26/08/2014 03:47:14 - Util - Reading SQL File name=[ML_STOCK_QA_CountryId_LIMIT20000.sql]
+[INFO] - 26/08/2014 03:47:14 - Util - Finding SQL: SELECT PD.PerformanceId,CD.CountryId,PD.LastUpdateDatetime FROM dbo.CompanyIdDimension CD FULL OUTER JOIN dbo.PerformanceIdDimension PD ON CD.CompanyId = PD.CompanyId LIMIT 20000
+[INFO] - 26/08/2014 03:47:14 - Util - Begin to connect to NO.2 DataBase... ...
+[INFO] - 26/08/2014 03:47:15 - DBPool - DataBase2 initialize finished, total cost [263]ms
+[INFO] - 26/08/2014 03:47:17 - Util - Success to connect to NO.2 DataBase!
+[INFO] - 26/08/2014 03:47:20 - Util - DB connection has closed!
+[ERROR] - 26/08/2014 03:47:20 - Util - C:\HJG_JAVA_WORKSPACE\SQLResultFileMaker\OutputResultFile (Access is denied)
+[INFO] - 26/08/2014 03:49:45 - Util - Got 1 SQL files in SQL path!Time costing: 168872 ns
+[INFO] - 26/08/2014 03:49:45 - ResultFileMaker - Begin to execute SQL in SQL file name=ML_STOCK_QA_CountryId_LIMIT20000.sql
+[INFO] - 26/08/2014 03:49:45 - Util - Start to read SQLs in each source SQL files... ...
+[INFO] - 26/08/2014 03:49:45 - Util - Reading SQL File name=[ML_STOCK_QA_CountryId_LIMIT20000.sql]
+[INFO] - 26/08/2014 03:49:45 - Util - Finding SQL: SELECT PD.PerformanceId,CD.CountryId,PD.LastUpdateDatetime FROM dbo.CompanyIdDimension CD FULL OUTER JOIN dbo.PerformanceIdDimension PD ON CD.CompanyId = PD.CompanyId LIMIT 20000
+[INFO] - 26/08/2014 03:49:45 - Util - Begin to connect to NO.2 DataBase... ...
+[INFO] - 26/08/2014 03:49:46 - DBPool - DataBase2 initialize finished, total cost [268]ms
+[INFO] - 26/08/2014 03:49:48 - Util - Success to connect to NO.2 DataBase!
+[INFO] - 26/08/2014 03:49:51 - Util - DB connection has closed!
+[ERROR] - 26/08/2014 03:49:51 - Util - C:\HJG_JAVA_WORKSPACE\SQLResultFileMaker\OutputResultFile (Access is denied)
+[INFO] - 26/08/2014 03:50:29 - Util - Got 1 SQL files in SQL path!Time costing: 229517 ns
+[INFO] - 26/08/2014 03:50:29 - ResultFileMaker - Begin to execute SQL in SQL file name=ML_STOCK_QA_CountryId_LIMIT20000.sql
+[INFO] - 26/08/2014 03:50:29 - Util - Start to read SQLs in each source SQL files... ...
+[INFO] - 26/08/2014 03:50:29 - Util - Reading SQL File name=[ML_STOCK_QA_CountryId_LIMIT20000.sql]
+[INFO] - 26/08/2014 03:50:29 - Util - Finding SQL: SELECT PD.PerformanceId,CD.CountryId,PD.LastUpdateDatetime FROM dbo.CompanyIdDimension CD FULL OUTER JOIN dbo.PerformanceIdDimension PD ON CD.CompanyId = PD.CompanyId LIMIT 20000
+[INFO] - 26/08/2014 03:50:29 - Util - Begin to connect to NO.2 DataBase... ...
+[INFO] - 26/08/2014 03:50:29 - DBPool - DataBase2 initialize finished, total cost [249]ms
+[INFO] - 26/08/2014 03:50:31 - Util - Success to connect to NO.2 DataBase!
+[INFO] - 26/08/2014 03:50:34 - Util - DB connection has closed!
+[INFO] - 26/08/2014 03:51:22 - Util - Got 1 SQL files in SQL path!Time costing: 324371 ns
+[INFO] - 26/08/2014 03:51:22 - ResultFileMaker - Begin to execute SQL in SQL file name=ML_STOCK_QA_CountryId_LIMIT20000.sql
+[INFO] - 26/08/2014 03:51:22 - Util - Start to read SQLs in each source SQL files... ...
+[INFO] - 26/08/2014 03:51:22 - Util - Reading SQL File name=[ML_STOCK_QA_CountryId_LIMIT20000.sql]
+[INFO] - 26/08/2014 03:51:22 - Util - Finding SQL: SELECT PD.PerformanceId,CD.CountryId,PD.LastUpdateDatetime FROM dbo.CompanyIdDimension CD FULL OUTER JOIN dbo.PerformanceIdDimension PD ON CD.CompanyId = PD.CompanyId LIMIT 20000
+[INFO] - 26/08/2014 03:51:22 - Util - Begin to connect to NO.2 DataBase... ...
+[INFO] - 26/08/2014 03:51:22 - DBPool - DataBase2 initialize finished, total cost [264]ms
+[INFO] - 26/08/2014 03:51:25 - Util - Success to connect to NO.2 DataBase!
+[INFO] - 26/08/2014 03:51:27 - Util - DB connection has closed!
+[INFO] - 26/08/2014 03:54:41 - Util - Got 1 SQL files in SQL path!Time costing: 181934 ns
+[INFO] - 26/08/2014 03:54:41 - ResultFileMaker - Begin to execute SQL in SQL file name=ML_STOCK_QA_CountryId_LIMIT20000.sql
+[INFO] - 26/08/2014 03:54:41 - Util - Start to read SQLs in each source SQL files... ...
+[INFO] - 26/08/2014 03:54:41 - Util - Reading SQL File name=[ML_STOCK_QA_CountryId_LIMIT20000.sql]
+[INFO] - 26/08/2014 03:54:41 - Util - Finding SQL: SELECT PD.PerformanceId,CD.CountryId,PD.LastUpdateDatetime FROM dbo.CompanyIdDimension CD FULL OUTER JOIN dbo.PerformanceIdDimension PD ON CD.CompanyId = PD.CompanyId LIMIT 20000
+[INFO] - 26/08/2014 03:54:41 - Util - Begin to connect to NO.2 DataBase... ...
+[INFO] - 26/08/2014 03:54:42 - DBPool - DataBase2 initialize finished, total cost [264]ms
+[INFO] - 26/08/2014 03:54:44 - Util - Success to connect to NO.2 DataBase!
+[INFO] - 26/08/2014 03:54:47 - Util - DB connection has closed!
+[ERROR] - 26/08/2014 03:54:47 - Util - C:\HJG_JAVA_WORKSPACE\SQLResultFileMaker\OutputResultFile (Access is denied)
+[INFO] - 26/08/2014 03:55:58 - Util - Got 1 SQL files in SQL path!Time costing: 175403 ns
+[INFO] - 26/08/2014 03:55:58 - ResultFileMaker - Begin to execute SQL in SQL file name=ML_STOCK_QA_CountryId_LIMIT20000.sql
+[INFO] - 26/08/2014 03:55:58 - Util - Start to read SQLs in each source SQL files... ...
+[INFO] - 26/08/2014 03:55:58 - Util - Reading SQL File name=[ML_STOCK_QA_CountryId_LIMIT20000.sql]
+[INFO] - 26/08/2014 03:55:58 - Util - Finding SQL: SELECT PD.PerformanceId,CD.CountryId,PD.LastUpdateDatetime FROM dbo.CompanyIdDimension CD FULL OUTER JOIN dbo.PerformanceIdDimension PD ON CD.CompanyId = PD.CompanyId LIMIT 20000
+[INFO] - 26/08/2014 03:55:58 - Util - Begin to connect to NO.2 DataBase... ...
+[INFO] - 26/08/2014 03:55:58 - DBPool - DataBase2 initialize finished, total cost [248]ms
+[INFO] - 26/08/2014 03:56:01 - Util - Success to connect to NO.2 DataBase!
+[INFO] - 26/08/2014 03:56:04 - Util - DB connection has closed!
+[INFO] - 26/08/2014 04:03:12 - Util - Got 1 SQL files in SQL path!Time costing: 168872 ns
+[INFO] - 26/08/2014 04:03:12 - ResultFileMaker - Begin to execute SQL in SQL file name=ML_STOCK_QA_CountryId_LIMIT20000.sql
+[INFO] - 26/08/2014 04:03:12 - Util - Start to read SQLs in each source SQL files... ...
+[INFO] - 26/08/2014 04:03:12 - Util - Reading SQL File name=[ML_STOCK_QA_CountryId_LIMIT20000.sql]
+[INFO] - 26/08/2014 04:03:12 - Util - Finding SQL: SELECT PD.PerformanceId,CD.CountryId,PD.LastUpdateDatetime FROM dbo.CompanyIdDimension CD FULL OUTER JOIN dbo.PerformanceIdDimension PD ON CD.CompanyId = PD.CompanyId LIMIT 20000
+[INFO] - 26/08/2014 04:03:12 - Util - Begin to connect to NO.2 DataBase... ...
+[INFO] - 26/08/2014 04:03:12 - DBPool - DataBase2 initialize finished, total cost [261]ms
+[INFO] - 26/08/2014 04:03:14 - Util - Success to connect to NO.2 DataBase!
+[INFO] - 26/08/2014 04:03:17 - Util - DB connection has closed!
+[INFO] - 26/08/2014 04:03:17 - Util - [C:\HJG_JAVA_WORKSPACE\SQLResultFileMaker/OutputResultFile//ML_STOCK_QA_CountryId_LIMIT20000.Result] result file has built up!Under path=C:\HJG_JAVA_WORKSPACE\SQLResultFileMaker/OutputResultFile/
+[INFO] - 26/08/2014 04:04:29 - Util - Got 1 SQL files in SQL path!Time costing: 210857 ns
+[INFO] - 26/08/2014 04:04:29 - ResultFileMaker - Begin to execute SQL in SQL file name=ML_STOCK_QA_CountryId_LIMIT20000.sql
+[INFO] - 26/08/2014 04:04:29 - Util - Start to read SQLs in each source SQL files... ...
+[INFO] - 26/08/2014 04:04:29 - Util - Reading SQL File name=[ML_STOCK_QA_CountryId_LIMIT20000.sql]
+[INFO] - 26/08/2014 04:04:29 - Util - Finding SQL: SELECT PD.PerformanceId,CD.CountryId,PD.LastUpdateDatetime FROM dbo.CompanyIdDimension CD FULL OUTER JOIN dbo.PerformanceIdDimension PD ON CD.CompanyId = PD.CompanyId LIMIT 20000
+[INFO] - 26/08/2014 04:04:29 - Util - Begin to connect to NO.2 DataBase... ...
+[INFO] - 26/08/2014 04:04:29 - DBPool - DataBase2 initialize finished, total cost [248]ms
+[INFO] - 26/08/2014 04:04:31 - Util - Success to connect to NO.2 DataBase!
+[INFO] - 26/08/2014 04:04:34 - Util - DB connection has closed!
+[INFO] - 26/08/2014 04:04:34 - Util - [C:\HJG_JAVA_WORKSPACE\SQLResultFileMaker/OutputResultFile//ML_STOCK_QA_CountryId_LIMIT20000.Result] result file has built up!Under path=C:\HJG_JAVA_WORKSPACE\SQLResultFileMaker/OutputResultFile/
+[INFO] - 26/08/2014 04:08:21 - Util - Got 1 SQL files in SQL path!Time costing: 211790 ns
+[INFO] - 26/08/2014 04:08:21 - ResultFileMaker - Begin to execute SQL in SQL file name=ML_STOCK_QA_CountryId_LIMIT20000.sql
+[INFO] - 26/08/2014 04:08:21 - Util - Start to read SQLs in each source SQL files... ...
+[INFO] - 26/08/2014 04:08:21 - Util - Reading SQL File name=[ML_STOCK_QA_CountryId_LIMIT20000.sql]
+[INFO] - 26/08/2014 04:08:21 - Util - Finding SQL: SELECT PD.PerformanceId,CD.CountryId,PD.LastUpdateDatetime FROM dbo.CompanyIdDimension CD FULL OUTER JOIN dbo.PerformanceIdDimension PD ON CD.CompanyId = PD.CompanyId LIMIT 20000
+[INFO] - 26/08/2014 04:08:21 - Util - Begin to connect to NO.2 DataBase... ...
+[INFO] - 26/08/2014 04:08:21 - DBPool - DataBase2 initialize finished, total cost [249]ms
+[INFO] - 26/08/2014 04:08:24 - Util - Success to connect to NO.2 DataBase!
+[INFO] - 26/08/2014 04:08:26 - Util - Finish to execute SQL,time costing: 2 s
+[INFO] - 26/08/2014 04:08:26 - Util - DB connection has closed!
+[INFO] - 26/08/2014 04:08:27 - Util - [C:\HJG_JAVA_WORKSPACE\SQLResultFileMaker/OutputResultFile//ML_STOCK_QA_CountryId_LIMIT20000.Result] result file has built up!Under path=C:\HJG_JAVA_WORKSPACE\SQLResultFileMaker/OutputResultFile/
+[INFO] - 26/08/2014 04:09:22 - Util - Got 1 SQL files in SQL path!Time costing: 191575 ns
+[INFO] - 26/08/2014 04:09:22 - ResultFileMaker - Begin to execute SQL in SQL file name=ML_STOCK_QA_CountryId_LIMIT20000.sql
+[INFO] - 26/08/2014 04:09:22 - Util - Start to read SQLs in each source SQL files... ...
+[INFO] - 26/08/2014 04:09:22 - Util - Reading SQL File name=[ML_STOCK_QA_CountryId_LIMIT20000.sql]
+[INFO] - 26/08/2014 04:09:22 - Util - Finding SQL: SELECT PD.PerformanceId,CD.CountryId,PD.LastUpdateDatetime FROM dbo.CompanyIdDimension CD FULL OUTER JOIN dbo.PerformanceIdDimension PD ON CD.CompanyId = PD.CompanyId LIMIT 20000
+[INFO] - 26/08/2014 04:09:22 - Util - Begin to connect to NO.2 DataBase... ...
+[INFO] - 26/08/2014 04:09:22 - DBPool - DataBase2 initialize finished, total cost [257]ms
+[INFO] - 26/08/2014 04:09:24 - Util - Success to connect to NO.2 DataBase!
+[INFO] - 26/08/2014 04:09:24 - Util - Start to execute SQL... ...
+[INFO] - 26/08/2014 04:09:27 - Util - Finish to execute SQL,time costing: 2 s
+[INFO] - 26/08/2014 04:09:27 - Util - DB connection has closed!
+[INFO] - 26/08/2014 04:09:27 - Util - [C:\HJG_JAVA_WORKSPACE\SQLResultFileMaker/OutputResultFile//ML_STOCK_QA_CountryId_LIMIT20000.Result] result file has built up!Under path=C:\HJG_JAVA_WORKSPACE\SQLResultFileMaker/OutputResultFile/
